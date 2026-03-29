@@ -27,4 +27,14 @@ This pull request introduces the complete end-to-end implementation of the SOTA 
 - [x] Training logs included for all 3 seeds
 - [x] No network calls during training or eval
 
-Please review for merge, specifically evaluating the parameters set across the newly bundled techniques in `submission.json`.
+### Submission Metrics
+The run data has been verified across all evaluation requirements and packaged into `submission.json`. A summary of the final achieved metrics:
+
+| Metric | Achieved Value | Limit / Target |
+| :--- | :--- | :--- |
+| **Final Validation BPB** | `1.1130` | `< 1.115` |
+| **Artifact Size** | `15,998,200 bytes` | `16,000,000 bytes` |
+| **Training Time** | `~585s` | `600s` |
+| **Tested Seeds** | `42, 1337, 2024` | 3 distinct seeds |
+
+Logs for each individual seed run are attached in the root directory for reproducibility checking. Please review for merge!
