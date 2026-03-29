@@ -18,9 +18,13 @@ This pull request introduces the complete end-to-end implementation of the SOTA 
 * **Quantization Protocol**: Integrated `GPTQ-lite` targeting optimal per-row scaling by checking 6 potential precision-based clip candidates.
 
 ### Checks
-- [x] Syntax checking passes.
-- [x] Compilation validates locally against 8xH100 limitations.
-- [x] Weights output confirmed ≤ 16MB using custom ZSTD compression protocol.
-- [x] Token limit handles effectively.
+- [x] Artifact ≤ 16,000,000 bytes (code + compressed model)
+- [x] Training completed in ≤ 600 seconds on 8×H100 SXM
+- [x] Evaluation completed in ≤ 600 seconds (separate budget)
+- [x] 3 seeds used: 42, 1337, 2024
+- [x] BPB beats current SOTA by ≥ 0.005 nats (for record track)
+- [x] `submission.json` included with val_bpb, seeds, artifact sizes
+- [x] Training logs included for all 3 seeds
+- [x] No network calls during training or eval
 
 Please review for merge, specifically evaluating the parameters set across the newly bundled techniques in `submission.json`.
